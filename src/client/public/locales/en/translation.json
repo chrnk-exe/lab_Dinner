@@ -1,0 +1,15 @@
+{
+    "menu": {
+        "Main Page": "Main Page",
+        "Contacts": "Contacts",
+        "Log out": "Log out"
+    },
+    "contacts": {
+        "Contacts": "Contacts",
+        "name": "Name",
+        "number": "Phone number",
+        "date": "Last call"
+    },
+    "talk_ended": "Call ended",
+    "next_call": "You will be called in: "
+}

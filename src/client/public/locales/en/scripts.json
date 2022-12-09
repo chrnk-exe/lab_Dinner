@@ -1,0 +1,158 @@
+{
+	"call": "Incoming call",
+	"variants": "Response options",
+	"scripts": [
+		{
+			"number": "+7 471 553-21-23",
+			"replicas": [
+				{
+					"message": "Hi! It’s Alex, your system administrator. We have some issues with the database, and I need your help. I need you to give me your username and password for accessing the corporate network.",
+					"answers": [
+						{
+							"text": "Sorry, I can’t do that. You should try recovering the database.",
+							"correct": true
+						},
+						{
+							"text": "Oh, hi Alex! No problem. My username is hacktory, and password is password.",
+							"correct": false
+						}
+					]
+				},
+				{
+					"message": "That’s the first thing I tried, but I couldn’t do it. Hats off to you for not giving out your credentials. But you can tell me, it’s strictly for work.",
+					"answers": [
+						{
+							"text": "You can come to my desk, and I’ll try to help you.",
+							"correct": true
+						},
+						{
+							"text": "Okay. My username is hacktory, and password is password.",
+							"correct": false
+						}
+					]
+				},
+				{
+					"message": "It’s quite urgent. If you don’t trust me, you can reset your password afterwards.",
+					"answers": [
+						{
+							"text": "Sorry, I gotta go. See you later!",
+							"correct": true
+						},
+						{
+							"text": "Well, if it’s urgent, here it is: my username is hacktory, and password is password.",
+							"correct": false
+						}
+					]
+				},
+				{
+					"message": "Great! Adios!",
+					"last": true
+				}
+			]
+		},
+		{
+			"number": "+7 663 914-91-28",
+			"replicas": [
+				{
+					"message": "Oh, hi! Could you order sushi for lunch for the team? I’ll have a Philadelphia, you pick the rest!",
+					"answers": [
+						{
+							"text": "Oh, hey boss. On it.",
+							"correct": true
+						},
+						{
+							"text": "Are you in today? I could come up, so we could discuss everything.",
+							"correct": false
+						}
+					]
+				},
+				{
+					"message": "What’s there to discuss? Just order some sushi!",
+					"last": true
+				}
+			]
+		},
+		{
+			"number": "+7 232 110-21-11",
+			"replicas": [
+				{
+					"message": "Hello, pizza delivery. Can you let me in? The security guard is pretty grumpy.",
+					"answers": [
+						{
+							"text": "Pizza? We ordered sushi.",
+							"correct": true
+						},
+						{
+							"text": "You’re so quick! Well, yes, he’s always like that… I’m coming.",
+							"correct": false
+						}
+					]
+				},
+				{
+					"message": "It must be our mistake. The pizza is on the house. Can you let me in?",
+					"answers": [
+						{
+							"text": "Thank you but no. You couldn’t make that decision on the spot.",
+							"correct": true
+						},
+						{
+							"text": "Wow, that’s nice. I’m coming!",
+							"correct": false
+						}
+					],
+					"last": true
+				}
+			]
+		},
+		{
+			"number": "+7 122 235-68-25",
+			"replicas": [
+				{
+					"message": "Hi, it’s Lynn from marketing. Could you get a report with all calls in our web service and email it to me? Boss wants to take a look at it. Send it to marketing@hacktory.com.",
+					"answers": [
+						{
+							"text": "Sure, I’ll send it right away.",
+							"correct": true
+						},
+						{
+							"text": "It’s best if you come to my desk. I’ll have the report printed for you.",
+							"correct": false
+						}
+					],
+					"last": true
+				}
+			]
+		},
+		{
+			"number": "+7 322 235-58-25",
+			"replicas": [
+				{
+					"message": "Hi, it’s me again. I haven’t received the report. Looks like my inbox is full. Can you send it to mу personal email eveline@gmail.com?",
+					"answers": [
+						{
+							"text": "Sure, no problem.",
+							"correct": false
+						},
+						{
+							"text": "Just clear up some space in your inbox, and I’ll send it to your corporate address again.",
+							"correct": true
+						}
+					]
+				},
+				{
+					"message": "It would be easier if you sent it to my other address.",
+					"answers": [
+						{
+							"text": "I understand, but that doesn’t work for me. Bye!",
+							"correct": true
+						},
+						{
+							"text": "Okay, just a moment.",
+							"correct": false
+						}
+					]
+				}
+			]
+		}
+	]
+}

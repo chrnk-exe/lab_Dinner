@@ -1,0 +1,97 @@
+@import "colors"
+
+.App
+  text-align: center
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width: 100vw
+
+.main
+  height: 100%
+  width: 100%
+  padding: 100px
+  padding-block: 75px
+  padding-bottom: 25px
+  box-sizing: border-box
+  // background-color: #eeeeee
+  background-color: deepskyblue
+
+.mailAppWrapper 
+
+  height: 100%
+  width: 100%
+  box-sizing: border-box
+
+  border-radius: 5px
+  position: relative
+  background: linear-gradient(45deg, rgba(113,26,117,1) 0%, rgba(241,0,134,1) 50%, rgba(242,28,141,1) 100%)
+  padding: 5px
+  background-size: 400% 400%
+
+  animation: moveBorder 2s infinite ease
+
+@keyframes moveBorder
+  0% 
+    background-position: 0% 50%
+  50% 
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%
+
+.mailApp
+  display: grid
+  grid-template-columns: 2fr 5fr
+  // margin-block: 100px
+  box-sizing: border-box
+  height: 100%
+  width: 100%
+
+#mailBox
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  padding: 15px
+  box-sizing: border-box
+  // border-right: 1px solid $purple
+  border-right: 1px solid deepskyblue
+  gap: 10px
+
+  .boxButton 
+    text-align: left
+  .list 
+    width: 100%
+
+#messages
+  padding: 15px
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  gap: 10px
+
+.messages
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
+
+.EmptyMessages
+  height: 100%
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-top: -20px
+  // background-color: #eee
+  font-size: 1.5em
+  font-weight: 700
+
+  p
+    padding: 20px
+    background-color: #f5f5f5
+    border: 1px solid deepskyblue
+    border-radius: 15px

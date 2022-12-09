@@ -1,0 +1,7 @@
+{
+    "good": "Congratulations! Take your flag.",
+    "bad":"YOU HACKED!",
+    "flag": "flag_voicePhishing",
+    "button": "Try again",
+    "no_incoming": "You have no incoming calls"
+}
