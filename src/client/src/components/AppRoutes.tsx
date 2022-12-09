@@ -6,29 +6,29 @@ import NotFound from './NotFound';
 import Loader from './Loader';
 import { useAppSelector } from '../store/hooks';
 import Dashboard from './Dashboard';
-import Contacts from './Contacts';
+import WifiList from './WifiList';
 
 const AppRoutes = () => {
-	const user = useAppSelector(state => state.user);
+	const isStarted = useAppSelector(state => state.lab);
 
 	return (
 		<Routes>
 			<Route
 				path="/"
 				element={
-					user.email ? (
-						<Navigate to={'/auth'} />
+					isStarted ? (
+						<Navigate to={'/start'} />
 					) : (
 						<Navigate to={'/app'} />
 					)
 				}
 			/>
-			<Route path={'/auth'} element={<Login />} />
+			<Route path={'/start'} element={<Login />} />
 
 			<Route
 				path={'/app'}
 				element={
-					user.email ? (
+					isStarted ? (
 						<Suspense fallback={<Loader />}>
 							<Dashboard>
 								<Outlet />
@@ -36,17 +36,17 @@ const AppRoutes = () => {
 						</Suspense>
 
 					) : (
-						<Navigate to={'/auth'} />
+						<Navigate to={'/start'} />
 					)
 				}>
 				<Route index element={<App />} />
-				<Route path={'/app/contacts'} element={<Contacts />} />
+				<Route path={'/app/wifi'} element={<WifiList />} />
 			</Route>
 
 			{/* Not found page */}
 			<Route
 				path="*"
-				element={<NotFound redirToApp={user.email ? true : false} />}
+				element={<NotFound redirToApp={isStarted} />}
 			/>
 		</Routes>
 	);

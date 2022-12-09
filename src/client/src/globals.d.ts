@@ -3,18 +3,13 @@ declare module '*.sass';
 declare module '*.json';
 declare module '*.mp4';
 
-declare interface User {
-	email?: string;
-	password?: string;
-}
-
-declare interface Contact {
-	number: string;
+declare interface Wifi {
+	quality: number;
 	name: string;
-	lastCall: string;
+	open: boolean;
 }
 
-declare type scriptState = 'incoming' | 'talking' | 'ended';
+declare type stageState = 'office' | 'cafe';
 
 declare interface Answer {
 	text: string;
@@ -37,3 +32,4 @@ declare interface ScriptRoot {
 	variants: string;
 	scripts: Script[];
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { type FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -16,13 +16,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import avatar from '../assets/Hacktory.jpg';
 import Typography from '@mui/material/Typography';
 import PhoneIcon from '@mui/icons-material/Phone';
-import ContactsIcon from '@mui/icons-material/Contacts';
+import WifiIcon from '@mui/icons-material/Wifi';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Collapse from '@mui/material/Collapse';
 import { useTranslation } from 'react-i18next';
-import Chip from '@mui/material/Chip';
-import russianFlag from '../assets/russia.svg';
-import englishFlag from '../assets/english.svg';
+import ChangeLanguageButton from './ChangeLanguageButton';
 
 const drawerWidth = 200;
 
@@ -54,14 +52,13 @@ const Drawer = styled(MuiDrawer, {
 	},
 }));
 
-export default function PrimarySearchAppBar({
-	children,
-}: {
+interface Props {
 	children: React.ReactNode;
-}) {
-	const [language, setLanguage] = useState<'en' | 'ru'>('en');
+}
+
+const PrimarySearchAppBar: FC<Props> = ({ children }) => {
 	const [open, setOpen] = useState<boolean>(true);
-	const { t, i18n } = useTranslation('translation', { keyPrefix: 'menu' });
+	const { t } = useTranslation('translation', { keyPrefix: 'menu' });
 	const drawerToggler = () => setOpen(prev => !prev);
 
 	const Navigations = [
@@ -71,9 +68,9 @@ export default function PrimarySearchAppBar({
 			icon: <PhoneIcon />,
 		},
 		{
-			link: '/app/contacts',
-			title: t('Contacts'),
-			icon: <ContactsIcon />,
+			link: '/app/wifi',
+			title: 'Wi-Fi',
+			icon: <WifiIcon />,
 		},
 	];
 
@@ -83,11 +80,6 @@ export default function PrimarySearchAppBar({
 		window.localStorage.clear();
 		window.sessionStorage.clear();
 		window.location.reload();
-	};
-
-	const changeLanguage = (language: 'en' | 'ru') => {
-		setLanguage(language);
-		i18n.changeLanguage(language);
 	};
 
 	return (
@@ -112,23 +104,7 @@ export default function PrimarySearchAppBar({
 						{open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
 					</IconButton>
 					<Collapse in={open} timeout="auto" unmountOnExit>
-						<Chip
-							avatar={
-								<Avatar
-									alt=""
-									src={
-										language === 'en'
-											? englishFlag
-											: russianFlag
-									}
-								/>
-							}
-							label={language === 'en' ? 'EN' : 'RU'}
-							variant="outlined"
-							onClick={() =>
-								changeLanguage(language === 'en' ? 'ru' : 'en')
-							}
-						/>
+						<ChangeLanguageButton />
 					</Collapse>
 				</Toolbar>
 				<Collapse in={open} timeout="auto" unmountOnExit>
@@ -196,4 +172,6 @@ export default function PrimarySearchAppBar({
 			</Box>
 		</Box>
 	);
-}
+};
+
+export default PrimarySearchAppBar;

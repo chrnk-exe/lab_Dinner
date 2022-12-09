@@ -24,13 +24,13 @@ export default responsiveFontSizes(
 	createTheme({
 		palette: {
 			primary: {
-				main: '#3f51b5',
+				main: '#f14749',
 			},
 			secondary: {
 				main: '#f50057',
 			},
 			error: {
-				main: '#ff1000',
+				main: '#f44336',
 			},
 		},
 	}),

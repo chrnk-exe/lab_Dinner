@@ -4,11 +4,11 @@ import { PayloadAction } from '@reduxjs/toolkit';
 const initialState: {
 	step: number;
 	result: number;
-	callState: scriptState;
+	stage: stageState;
 } = {
 	step: 1,
 	result: 0,
-	callState: 'incoming'
+	stage: 'office'
 };
 
 export const scriptSlice = createSlice({
@@ -21,8 +21,8 @@ export const scriptSlice = createSlice({
 		nextStep: (state) => {
 			state.step = state.step + 1;
 		},
-		setCallState: (state, action: PayloadAction<scriptState>) => {
-			state.callState = action.payload;
+		setCallState: (state, action: PayloadAction<stageState>) => {
+			state.stage = action.payload;
 		}
 	},
 });

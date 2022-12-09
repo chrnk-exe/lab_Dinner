@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@reduxjs/toolkit';
-import userReducer from './slices/userSlice';
+import labReducer from './slices/labSlice';
 import scriptReducer from './slices/scriptSlice';
 export const store = configureStore({
 	reducer: {
-		user: userReducer,
+		lab: labReducer,
 		script: scriptReducer,
 	}, 
 	middleware: [
