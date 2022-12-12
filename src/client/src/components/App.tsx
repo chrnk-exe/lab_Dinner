@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { type FC, useState } from 'react';
 import { Box, Modal, Fade, Typography, Button } from '@mui/material';
 import Scripts from './Scripts';
 import { useTranslation } from 'react-i18next';
 import workingVideo from '../assets/1.mp4';
 
-function App() {
+interface Props {
+	time: string,
+	subTime(subTime: number): void,
+	isReversed: boolean
+}
+
+const App: FC<Props> = ({time, subTime, isReversed}) => {
 	const [showFlag, setShowFlag] = useState<boolean>(false);
 	const [open, setOpen] = useState<boolean>(false);
 	const { t } = useTranslation('flag');
@@ -25,6 +31,9 @@ function App() {
 					boxSizing: 'border-box',
 				}}>
 				<Scripts
+					time={time}
+					subTime={subTime}
+					isReversed={isReversed}
 					openModal={handleOpen}
 					showFlag={() => setShowFlag(true)}
 				/>
@@ -100,6 +109,6 @@ function App() {
 			</Box>
 		</Box>
 	);
-}
+};
 
 export default App;

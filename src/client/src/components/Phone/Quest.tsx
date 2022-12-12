@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {type FC} from 'react';
 import { Button, Typography, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Typewriter from '../Typewriter';
-import useTimer from '../../useTimer';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import {
 	nextStep,
@@ -10,13 +9,16 @@ import {
 	decrementResult,
 } from '../../store/slices/scriptSlice';
 
-const Quest = () => {
+interface Props {
+	time: string,
+	subTime(subTime: number): void,
+	isReversed: boolean
+}
+
+const Quest: FC<Props> = ({time, subTime, isReversed}) => {
 	const { t } = useTranslation('scripts');
-	const [time, subTime, isReversed] = useTimer();
 	const dispatch = useAppDispatch();
 	const step = useAppSelector(state => state.script.step);
-
-	const stage = useAppSelector(state => state.script.stage);
 
 	const answerHandler = (answerIsTrue: boolean, diff?: number) => {
 		if (!answerIsTrue) {
@@ -31,7 +33,6 @@ const Quest = () => {
 				(t('scripts', { returnObjects: true }) as Script[])[step - 1]['nextStage'],
 			),
 		);
-		console.log(stage, (t('scripts', { returnObjects: true }) as Script[])[step - 1]);
 		return 0;
 	};
 
