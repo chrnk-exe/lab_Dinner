@@ -17,7 +17,7 @@ import avatar from '../assets/Hacktory.jpg';
 import Typography from '@mui/material/Typography';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WifiIcon from '@mui/icons-material/Wifi';
-import LogoutIcon from '@mui/icons-material/Logout';
+
 import Collapse from '@mui/material/Collapse';
 import { useTranslation } from 'react-i18next';
 import ChangeLanguageButton from './ChangeLanguageButton';
@@ -75,12 +75,6 @@ const PrimarySearchAppBar: FC<Props> = ({ children }) => {
 	];
 
 	const navigate = useNavigate();
-
-	const logOutHandler = () => {
-		window.localStorage.clear();
-		window.sessionStorage.clear();
-		window.location.reload();
-	};
 
 	return (
 		<Box display={'flex'} sx={{ flexGrow: 1 }}>
@@ -144,14 +138,6 @@ const PrimarySearchAppBar: FC<Props> = ({ children }) => {
 							</ListItemButton>
 						</ListItem>
 					))}
-					<ListItem sx={{ px: 0 }}>
-						<ListItemButton onClick={logOutHandler}>
-							<ListItemIcon>
-								<LogoutIcon />
-							</ListItemIcon>
-							<ListItemText>{t('Log out')}</ListItemText>
-						</ListItemButton>
-					</ListItem>
 				</List>
 			</Drawer>
 			<Box

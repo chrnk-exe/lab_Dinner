@@ -1,8 +1,7 @@
 {
     "menu": {
         "Main Page": "Main Page",
-        "Contacts": "Contacts",
-        "Log out": "Log out"
+        "Contacts": "Contacts"
     },
     "wifi": {
         "wifi": "Available networks",
