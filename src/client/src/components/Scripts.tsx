@@ -1,15 +1,8 @@
 import React, { type FC, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import {
-	nextStep,
-	incrementResult,
-	setCallState,
-} from '../store/slices/scriptSlice';
+import { useAppSelector } from '../store/hooks';
 import {useTranslation} from 'react-i18next';
-import Incoming from './Phone/Incoming';
-import Talking from './Phone/Talking';
-import Finish from './Phone/Finish';
+import Quest from './Phone/Quest';
 
 type Props = {
 	openModal(): void;
@@ -17,26 +10,20 @@ type Props = {
 };
 
 const Scripts: FC<Props> = ({ openModal, showFlag }) => {
-	const {t} = useTranslation('flag');
+	const { t } = useTranslation('flag');
 	const step = useAppSelector(state => state.script.step);
 	const result = useAppSelector(state => state.script.result);
-	const callState = useAppSelector(state => state.script.callState);
-
-	const dispatch = useAppDispatch();
-	const handleCallOff = () => dispatch(setCallState('ended'));
-	const handleCallOn = () => dispatch(setCallState('incoming'));
-	const handleCallPending = () => dispatch(setCallState('talking'));
 
 	useEffect(() => {
-		if (step === 6) {
+		if (step === 8) {
 			openModal();
-			if (result === 5) {
+			if (result === 1) {
 				showFlag();
 			}
 		}
 	}, [step, result]);
 
-	if (step !== 6)
+	if (step !== 8)
 		return (
 			<Box
 				display="flex"
@@ -52,29 +39,7 @@ const Scripts: FC<Props> = ({ openModal, showFlag }) => {
 					flexGrow: 1,
 					mx: 3,
 				}}>
-				{
-					{
-						incoming: (
-							<Incoming
-								handleCallPending={handleCallPending}
-								step={step}
-							/>
-						),
-						talking: (
-							<Talking
-								incrementResult={() => dispatch(incrementResult())}
-								handleCallOff={handleCallOff}
-								step={step}
-							/>
-						),
-						ended: (
-							<Finish
-								nextStep={() => dispatch(nextStep())}
-								handleCallOn={handleCallOn}
-							/>
-						),
-					}[callState]
-				}
+				<Quest />
 			</Box>
 		);
 	else

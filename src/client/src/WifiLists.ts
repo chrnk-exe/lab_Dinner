@@ -1,4 +1,3 @@
-import randomDate from './utils/formatDate';
 import byField from './utils/byField';
 
 export const OfficeWifi: Wifi[] = [
@@ -13,7 +12,7 @@ export const OfficeWifi: Wifi[] = [
 		open: false
 	},
 	{
-		name: 'iPhone (Ann)',
+		name: 'iPhone',
 		quality: 2,
 		open: false,
 	},
@@ -35,20 +34,5 @@ export const CafeWifi: Wifi[] = [
 		quality: 2,
 		open: false
 	},
-	{
-		name: 'evilWifi',
-		quality: 1,
-		open: true,
-	},
-	{
-		name: 'NOT DANGEROUS WIFI!',
-		quality: 3,
-		open: true
-	},
-	{
-		name: 'Cafe Wifi launge-zone',
-		quality: 2,
-		open: false
-	}
 ].sort(byField('quality'));
 

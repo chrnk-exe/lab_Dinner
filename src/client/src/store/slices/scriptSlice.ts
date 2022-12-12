@@ -7,7 +7,7 @@ const initialState: {
 	stage: stageState;
 } = {
 	step: 1,
-	result: 0,
+	result: 1,
 	stage: 'office'
 };
 
@@ -18,14 +18,17 @@ export const scriptSlice = createSlice({
 		incrementResult: (state) => {
 			state.result = state.result + 1;
 		},
+		decrementResult: (state) => {
+			state.result = state.result - 1;
+		},
 		nextStep: (state) => {
 			state.step = state.step + 1;
 		},
-		setCallState: (state, action: PayloadAction<stageState>) => {
+		setStage: (state, action: PayloadAction<stageState>) => {
 			state.stage = action.payload;
 		}
 	},
 });
 
-export const { incrementResult, nextStep, setCallState } = scriptSlice.actions;
+export const { incrementResult, nextStep, setStage, decrementResult } = scriptSlice.actions;
 export default scriptSlice.reducer;

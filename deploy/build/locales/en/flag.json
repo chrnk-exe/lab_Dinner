@@ -1,7 +1,7 @@
 {
-    "good": "Congratulations! Take your flag.",
-    "bad":"YOU HACKED!",
-    "flag": "flag_voicePhishing",
+    "good": "The boss congratulates you, since you did not fall for the tricks of scammers, take away your flag.",
+    "bad":"Because of your mistake, the boss issued you a fine, and all employees now need to change passwords!",
+    "flag": "flag_d1nnerFl@g",
     "button": "Try again",
-    "no_incoming": "You have no incoming calls"
+    "no_incoming": "Lunch is over!"
 }

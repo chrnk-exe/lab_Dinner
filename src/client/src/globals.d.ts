@@ -14,20 +14,16 @@ declare type stageState = 'office' | 'cafe';
 declare interface Answer {
 	text: string;
 	correct: boolean;
-}
-
-declare interface Replica {
-	message: string;
-	answers?: Answer[];
-	last?: boolean;
+	timediff?: number;
 }
 
 declare interface Script {
-	number: string;
-	replicas: Replica[];
+	message: string;
+	nextStage: stageState;
+	answers: Answer[];
 }
 
-declare interface ScriptRoot {
+declare interface ScriptObject {
 	call: string;
 	variants: string;
 	scripts: Script[];

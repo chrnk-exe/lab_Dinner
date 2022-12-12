@@ -1,156 +1,99 @@
 {
-	"call": "Incoming call",
-	"variants": "Response options",
+	"call": "Входящий звонок",
+	"variants": "Варианты действий",
 	"scripts": [
 		{
-			"number": "+7 471 553-21-23",
-			"replicas": [
+			"message": "У вас 60 минут на обед, надо успеть!",
+			"nextStage": "office",
+			"answers": [
 				{
-					"message": "Hi! It’s Alex, your system administrator. We have some issues with the database, and I need your help. I need you to give me your username and password for accessing the corporate network.",
-					"answers": [
-						{
-							"text": "Sorry, I can’t do that. You should try recovering the database.",
-							"correct": true
-						},
-						{
-							"text": "Oh, hi Alex! No problem. My username is hacktory, and password is password.",
-							"correct": false
-						}
-					]
-				},
-				{
-					"message": "That’s the first thing I tried, but I couldn’t do it. Hats off to you for not giving out your credentials. But you can tell me, it’s strictly for work.",
-					"answers": [
-						{
-							"text": "You can come to my desk, and I’ll try to help you.",
-							"correct": true
-						},
-						{
-							"text": "Okay. My username is hacktory, and password is password.",
-							"correct": false
-						}
-					]
-				},
-				{
-					"message": "It’s quite urgent. If you don’t trust me, you can reset your password afterwards.",
-					"answers": [
-						{
-							"text": "Sorry, I gotta go. See you later!",
-							"correct": true
-						},
-						{
-							"text": "Well, if it’s urgent, here it is: my username is hacktory, and password is password.",
-							"correct": false
-						}
-					]
-				},
-				{
-					"message": "Great! Adios!",
-					"last": true
+					"text": "Дальше",
+					"correct": true
 				}
 			]
 		},
 		{
-			"number": "+7 663 914-91-28",
-			"replicas": [
+			"message": "Так как времени мало, вы задумываетесь, заблокировать ваш компьютер или нет, ведь в офисе все свои, что может случиться?",
+			"nextStage": "office",
+			"answers": [
 				{
-					"message": "Oh, hi! Could you order sushi for lunch for the team? I’ll have a Philadelphia, you pick the rest!",
-					"answers": [
-						{
-							"text": "Oh, hey boss. On it.",
-							"correct": true
-						},
-						{
-							"text": "Are you in today? I could come up, so we could discuss everything.",
-							"correct": false
-						}
-					]
+					"text": "Заблокировать компьютер (5 минут)",
+					"correct": true,
+					"timediff": 300
 				},
 				{
-					"message": "What’s there to discuss? Just order some sushi!",
-					"last": true
+					"text": "Уйти, оставив компьютер так.",
+					"correct": false
 				}
 			]
 		},
 		{
-			"number": "+7 232 110-21-11",
-			"replicas": [
+			"message": "Выходя из офиса, руководитель просит вас захватить с собой мусор, но его желательно пропустить через шредер!",
+			"nextStage": "cafe",
+			"answers": [
 				{
-					"message": "Hello, pizza delivery. Can you let me in? The security guard is pretty grumpy.",
-					"answers": [
-						{
-							"text": "Pizza? We ordered sushi.",
-							"correct": true
-						},
-						{
-							"text": "You’re so quick! Well, yes, he’s always like that… I’m coming.",
-							"correct": false
-						}
-					]
+					"text": "Взять мусор и пропустить через шредер (10 минут)",
+					"correct": true,
+					"timediff": 600
 				},
 				{
-					"message": "It must be our mistake. The pizza is on the house. Can you let me in?",
-					"answers": [
-						{
-							"text": "Thank you but no. You couldn’t make that decision on the spot.",
-							"correct": true
-						},
-						{
-							"text": "Wow, that’s nice. I’m coming!",
-							"correct": false
-						}
-					],
-					"last": true
+					"text": "Не брать мусор",
+					"correct": true
 				}
 			]
 		},
 		{
-			"number": "+7 122 235-68-25",
-			"replicas": [
+			"message": "На обеде естественно нужен интернет, поэтому желательно подключится к кафешному wi-fi, но сети 2, одна с паролем, другая нет, а пароль еще нужно выяснить. Зачем нужны сложности, если есть есть без пароля?",
+			"nextStage": "cafe",
+			"answers": [
 				{
-					"message": "Hi, it’s Lynn from marketing. Could you get a report with all calls in our web service and email it to me? Boss wants to take a look at it. Send it to marketing@hacktory.com.",
-					"answers": [
-						{
-							"text": "Sure, I’ll send it right away.",
-							"correct": true
-						},
-						{
-							"text": "It’s best if you come to my desk. I’ll have the report printed for you.",
-							"correct": false
-						}
-					],
-					"last": true
+					"text": "Найти пароль (5 минут).",
+					"correct": true,
+					"timediff": 300
+				},
+				{
+					"text": "Подключиться к бесплатному wi-fi без пароля",
+					"correct": false
 				}
 			]
 		},
 		{
-			"number": "+7 322 235-58-25",
-			"replicas": [
+			"message": "Настало время еды!",
+			"nextStage": "cafe",
+			"answers": [
 				{
-					"message": "Hi, it’s me again. I haven’t received the report. Looks like my inbox is full. Can you send it to mу personal email eveline@gmail.com?",
-					"answers": [
-						{
-							"text": "Sure, no problem.",
-							"correct": false
-						},
-						{
-							"text": "Just clear up some space in your inbox, and I’ll send it to your corporate address again.",
-							"correct": true
-						}
-					]
+					"text": "Обед",
+					"correct": true,
+					"timediff": 1800
+				}
+			]
+		},
+		{
+			"message": "Во время обеда коллега спрашивает, оплатили ли мы счет одной компании, чего не поболтать в людном месте про финансовые дела, верно?",
+			"nextStage": "office",
+			"answers": [
+				{
+					"text": "Поболтать с коллегой (10 минут)",
+					"correct": true,
+					"timediff": 600
 				},
 				{
-					"message": "It would be easier if you sent it to my other address.",
-					"answers": [
-						{
-							"text": "I understand, but that doesn’t work for me. Bye!",
-							"correct": true
-						},
-						{
-							"text": "Okay, just a moment.",
-							"correct": false
-						}
-					]
+					"text": "Пойти по своим делам.",
+					"correct": true
+				}
+			]
+		},
+		{
+			"message": "На обратном пути вы подскальзываетесь на флешке и.. Чуть не упали. Какая красивая, розовая флешка. С надписью “I love you” Это знак, судьба! На флешке точно что-то интересное или даже фотки! Надо срочно глянуть!",
+			"nextStage": "office",
+			"answers": [
+				{
+					"text": "Подобрать флешку и посмотреть содержимое на своём компьютере",
+					"correct": false
+				},
+				{
+					"text": "Отдать флешку системному администратору, пусть сам разбирается.",
+					"correct": true
 				}
 			]
 		}

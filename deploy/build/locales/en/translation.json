@@ -4,12 +4,15 @@
         "Contacts": "Contacts",
         "Log out": "Log out"
     },
-    "contacts": {
-        "Contacts": "Contacts",
-        "name": "Name",
-        "number": "Phone number",
-        "date": "Last call"
+    "wifi": {
+        "wifi": "Available networks",
+        "name": "Network name",
+        "open_closed": "Open or Encrypted",
+        "open": "Open",
+        "closed": "Encrypted",
+        "connection_quality": "Connection Quality"
     },
     "talk_ended": "Call ended",
-    "next_call": "You will be called in: "
+    "next_call": "You will be called in: ",
+    "Lets_Dinner": "It's time for lunch!"
 }
