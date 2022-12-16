@@ -29,3 +29,4 @@ declare interface ScriptObject {
 	scripts: Script[];
 }
 
+declare interface User { }
