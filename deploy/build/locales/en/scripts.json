@@ -1,98 +1,98 @@
 {
 	"call": "Входящий звонок",
-	"variants": "Варианты действий",
+	"variants": "You can",
 	"scripts": [
 		{
-			"message": "У вас 60 минут на обед, надо успеть!",
+			"message": "You have 60 minutes for lunch, so don't waste your time!",
 			"nextStage": "office",
 			"answers": [
 				{
-					"text": "Дальше",
+					"text": "Next",
 					"correct": true
 				}
 			]
 		},
 		{
-			"message": "Так как времени мало, вы задумываетесь, заблокировать ваш компьютер или нет, ведь в офисе все свои, что может случиться?",
+			"message": "Since you don’t have much time, you’re thinking about whether you should lock your computer or not. People at the office are like family – what can go wrong?",
 			"nextStage": "office",
 			"answers": [
 				{
-					"text": "Заблокировать компьютер (5 минут)",
+					"text": "Lock your computer (5 min)",
 					"correct": true,
 					"timediff": 300
 				},
 				{
-					"text": "Уйти, оставив компьютер так.",
+					"text": "Leave your computer unlocked",
 					"correct": false
 				}
 			]
 		},
 		{
-			"message": "Выходя из офиса, руководитель просит вас захватить с собой мусор, но его желательно пропустить через шредер!",
+			"message": "Leaving the office, the manager asks you to fetch paper waste. It should be shredded.",
 			"nextStage": "cafe",
 			"answers": [
 				{
-					"text": "Взять мусор и пропустить через шредер (10 минут)",
+					"text": "Get paper waste and shred it (10 min)",
 					"correct": true,
 					"timediff": 600
 				},
 				{
-					"text": "Не брать мусор",
+					"text": "Leave it as it is",
 					"correct": true
 				}
 			]
 		},
 		{
-			"message": "На обеде естественно нужен интернет, поэтому желательно подключится к кафешному wi-fi, но сети 2, одна с паролем, другая нет, а пароль еще нужно выяснить. Зачем нужны сложности, если есть есть без пароля?",
+			"message": "At lunch, you need to go online. You can connect to café Wi-Fi networks. But there are two of them – one has a password, the other does not. And the password is yet to be found out. Why do we need to go through the trouble when there is one with public access?",
 			"nextStage": "cafe",
 			"answers": [
 				{
-					"text": "Найти пароль (5 минут).",
+					"text": "Find the password (5 min)",
 					"correct": true,
 					"timediff": 300
 				},
 				{
-					"text": "Подключиться к бесплатному wi-fi без пароля",
+					"text": "Connect to free unpassworded network",
 					"correct": false
 				}
 			]
 		},
 		{
-			"message": "Настало время еды!",
+			"message": "Time to eat!",
 			"nextStage": "cafe",
 			"answers": [
 				{
-					"text": "Обед",
+					"text": "Lunch",
 					"correct": true,
 					"timediff": 1800
 				}
 			]
 		},
 		{
-			"message": "Во время обеда коллега спрашивает, оплатили ли мы счет одной компании, чего не поболтать в людном месте про финансовые дела, верно?",
+			"message": "During lunch, your colleague asks you whether you’ve cleared the bill of some company. Why not discuss corporate finances in a crowded café?",
 			"nextStage": "office",
 			"answers": [
 				{
-					"text": "Поболтать с коллегой (10 минут)",
+					"text": "Talk with your colleague (10 min)",
 					"correct": true,
 					"timediff": 600
 				},
 				{
-					"text": "Пойти по своим делам.",
+					"text": "Leave it and mind your own business",
 					"correct": true
 				}
 			]
 		},
 		{
-			"message": "На обратном пути вы подскальзываетесь на флешке и.. Чуть не упали. Какая красивая, розовая флешка. С надписью “I love you” Это знак, судьба! На флешке точно что-то интересное или даже фотки! Надо срочно глянуть!",
+			"message": "On your way back, at the checkpoint, you noticed a stylish black flash drive with your company logo on it. Apparently, one of your colleagues lost it. Will you check what’s on it?",
 			"nextStage": "office",
 			"answers": [
 				{
-					"text": "Подобрать флешку и посмотреть содержимое на своём компьютере",
+					"text": "Pick up the flash drive and check it on you computer",
 					"correct": false
 				},
 				{
-					"text": "Отдать флешку системному администратору, пусть сам разбирается.",
+					"text": "Hand the flash drive over to the system administrator",
 					"correct": true
 				}
 			]

@@ -1,6 +1,6 @@
 {
-    "good": "The boss congratulates you, since you did not fall for the tricks of scammers, take away your flag.",
-    "bad":"Because of your mistake, the boss issued you a fine, and all employees now need to change passwords!",
+    "good": "Congratulations! You have not fallen for the tricks of adversaries. Take your flag:",
+    "bad":"Your boss fined you for your unawareness. Now, all employees have to change their passwords.",
     "flag": "flag_d1nnerFl@g",
     "button": "Try again",
     "no_incoming": "Lunch is over!"

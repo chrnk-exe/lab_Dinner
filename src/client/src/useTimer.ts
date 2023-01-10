@@ -11,7 +11,12 @@ export default (start = 3600): [string, (subTime: number) => void, boolean] => {
 	useEffect(() => {
 		const ID = setInterval(() => {
 			if (!reverse) {
-				setTime(prev => prev - 1);
+				setTime(prev => {
+					if(prev === 1){
+						setReverse(true);
+					}
+					return prev - 1;
+				});
 			} else {
 				setTime(prev => prev + 1);
 			}

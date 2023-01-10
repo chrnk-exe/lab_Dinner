@@ -93,7 +93,7 @@ const Quest: FC<Props> = ({time, subTime, isReversed}) => {
 						(t('scripts', { returnObjects: true }) as Script[])[
 							step - 1
 						].answers as Answer[]
-					)?.length > 0
+					)?.length > 1
 						? t('variants')
 						: ''}
 				</Typography>
